@@ -1,0 +1,1 @@
+# easy-hugo-blog
