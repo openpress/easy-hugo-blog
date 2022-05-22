@@ -1,0 +1,52 @@
+{{ $file := .Get 0 }}
+{{ if os.FileExists $file }}
+    <!-- for display code -->
+    {{ $extLang := dict ".py"  "python"
+                        ".rb"  "ruby"
+                        ".sh"  "bash"
+                        ".go"  "go"
+                        ".pl"  "perl"
+                        ".js"  "javascript"
+                        ".hs"  "haskell"
+                        ".rs"  "rust"
+                        ".exs" "elixir"
+                        ".php" "php" }}
+    {{ $code := os.ReadFile $file }}
+    {{ $lang := index $extLang (path.Ext $file) }}
+    {{ highlight $code $lang "" }}
+
+    <!-- for display code output -->
+    {{ $langCommentPrefix := dict "python" "#"
+                                  "ruby" "#"
+                                  "bash" "#"
+                                  "go" "//"
+                                  "perl" "#"
+                                  "javascript" "//"
+                                  "haskell" "--"
+                                  "rust" "//"
+                                  "elixir" "#"
+                                  "php" "//" }}
+    {{ $commentPrefix := index $langCommentPrefix $lang }}
+    {{ $routes := findRE (print $commentPrefix "\\s+GET .+") $code }}
+    <!-- you can customize highlight options -->
+    {{ $highlightOptions := "lineNos=false, style=manni" }}
+    {{ $outputFormatMap := dict ".html" "html"
+                                ".htm"  "html"
+                                ".json" "json"
+                                ".xml"  "xml"
+                                ".rss"  "xml"
+                                ".yml"  "yml"
+                                ".yaml" "yaml" }}
+
+    {{ range $routes }}
+        {{ $outputFile := strings.TrimLeft "/" (index (split . " ") 2) }}
+        {{ if os.FileExists $outputFile }}
+            {{ $outputFormat := "text" }}
+            {{ $ext := path.Ext $outputFile }}
+            {{ if isset $outputFormatMap $ext }}
+                {{ $outputFormat = index $outputFormatMap $ext }}
+            {{ end }}
+            {{ highlight (os.ReadFile $outputFile) $outputFormat $highlightOptions }}
+        {{ end }}
+    {{ end }}
+{{ end }}
