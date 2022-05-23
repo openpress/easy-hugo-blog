@@ -1,0 +1,40 @@
+name: "Convert issues to Markdown files"
+on:
+  # schedule:
+  #   # every 5 minutes to fetch issues
+  #   - cron: '*/5 * * * *'
+  issues:
+    types: [opened, edited, reopened]
+
+
+jobs:
+  convert_issues_to_markdown_job:
+    runs-on: ubuntu-latest
+    name: Convert issues to markdowns.
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: Fetch issues and generate markdowns
+        uses: skyfe79/hugo-with-github-issues@v1.7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repo: ${{ github.event.repository.name }}
+          owner: ${{ github.event.repository.owner.login }}
+          issue-state: 'open'
+          skip-author: 'utterances-bot'
+          skip-pull-requests: true
+          use-issue-seperator: false
+          output: 'content/post'
+      - name: Commit files
+        run: |
+          if test -n "$(git status --porcelain 2>/dev/null)"; then
+              git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git config --local user.name "github-actions[bot]"
+              git add .
+              git commit -m "Convert issues to posts"
+          fi
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
