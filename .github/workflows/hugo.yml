@@ -4,6 +4,9 @@ on:
   push:
   create:
   workflow_dispatch:
+  schedule:
+    # every 5 minutes to fetch issues
+    - cron: '*/5 * * * *'
 
 jobs:
   deploy:
