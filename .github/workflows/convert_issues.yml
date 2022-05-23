@@ -1,10 +1,7 @@
 name: "Convert issues to Markdown files"
 on:
-  # schedule:
-  #   # every 5 minutes to fetch issues
-  #   - cron: '*/5 * * * *'
   issues:
-    types: [opened, edited, reopened]
+    types: [opened, edited, reopened, deleted, closed, labeled, unlabeled, transferred]
 
 
 jobs:
@@ -14,6 +11,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v1
+      - name: Remove all issue posts at first
+        run: rm -f content/post/${{ github.event.repository.owner.login }}-${{ github.event.repository.name }}*.md
       - name: Fetch issues and generate markdowns
         uses: skyfe79/hugo-with-github-issues@v1.7
         with:
