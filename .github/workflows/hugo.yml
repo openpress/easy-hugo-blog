@@ -21,16 +21,6 @@ jobs:
       - uses: gitx-io/ActionServerless@master
         with:
           filepath: './app'
-      - name: Commit ActionServerless result
-        run: |
-          # git commit if there's any change
-          if test -n "$(git status --porcelain 2>/dev/null)"; then
-              git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-              git config --local user.name "github-actions[bot]"
-              git add .
-              git commit -m "Update GitFx result"
-              git push origin ${GITHUB_REF##*/}
-          fi
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -42,5 +32,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: ${{ github.event.repository.owner.login }}/${{ github.event.repository.owner.login }}.github.io
           publish_dir: ./public
