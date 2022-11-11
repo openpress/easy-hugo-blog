@@ -6,7 +6,7 @@ It integrates several plugins/GitHub Actions to make things easy and simple.
 
 * [gitfx shortcode plugin](https://gitx.io/post/hugo-with-gitfx-zh_cn/) helps to insert code snippets and its outputs in post automaticly
 * [hugo-with-github-issues](https://github.com/skyfe79/hugo-with-github-issues) Action is used to create/edit new blog post in Issues and then added/updated to posts automaticly
-* [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) Action helps to update posts to `<Your GitHub username/Orgnization>.github.io`
+* [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) Action helps to update posts to `<Your username/Orgnization>.github.io` automaticly
 
 # Quick Start
 
@@ -21,3 +21,5 @@ It integrates several plugins/GitHub Actions to make things easy and simple.
 4. A minute or two, your GitHub Pages site will be updated.
 
 ### Use one repo to edit posts, another one to serve GitHub Pages
+
+(TBD)
