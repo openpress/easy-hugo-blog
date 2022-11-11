@@ -31,6 +31,14 @@ Take your username/Organization as `openpress` for example:
 * `openpress/homepage`: A private repository of `Easy Hugo Blog` template
 * `openpress/openpress.github.io`: A public repository using GitHub Pages
 
-And you need use `deploy_key` or `personal_token`. When you use `deploy_key`, set your private key to the private repository and set your public key to your public repository. 
+And you need use `deploy_key`. Firstly set your private key to the private repository, and ensure that the Name is set as `ACTIONS_DEPLOY_KEY` 
 
-You can [use ssh-keygen Template](https://github.com/gitx-io/ssh-keygen-template) to create a `deploy key`.
+![WX20221008-114114@2x](https://user-images.githubusercontent.com/1658618/201357562-cedbacc6-0cac-4245-bd03-0b617090c211.png)
+
+and set your public key to your public repository. 
+
+![WX20221006-161458@2x](https://user-images.githubusercontent.com/1658618/201357645-e660f17a-c306-4806-92b0-05da6992f64e.png)
+
+Note: You can [use ssh-keygen Template](https://github.com/gitx-io/ssh-keygen-template) to create a `deploy key` in GitHub repo instead of commandline.
+
+
