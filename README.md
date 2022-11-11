@@ -5,8 +5,8 @@ Easy Hugo Blog（EHB）is a GitHub Template repo for creating a Hugo blog rapidl
 It integrates several plugins/GitHub Actions to make things easy and simple.
 
 * [gitfx shortcode plugin](https://gitx.io/post/hugo-with-gitfx-zh_cn/) helps to insert code snippets and its outputs in post automaticly
-* [hugo-with-github-issues](https://github.com/skyfe79/hugo-with-github-issues) Action is used to create/edit new blog post in Issues and then added/updated to posts automaticly
-* [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) Action helps to update posts to `<Your username/Orgnization>.github.io` automaticly
+* [hugo-with-github-issues](https://github.com/skyfe79/hugo-with-github-issues) Action is used to create/edit new blog post in Issues and then added/updated to Hugo posts automaticly
+* [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) Action helps to deploy posts to `<Your username/Organization>.github.io` automaticly
 
 # Quick Start
 
@@ -22,4 +22,11 @@ It integrates several plugins/GitHub Actions to make things easy and simple.
 
 ### Use one repo to edit posts, another one to serve GitHub Pages
 
-(TBD)
+Use case:
+
+A GitHub Free Plan account cannot use the GitHub Pages in a private repository. To make your source contents private and deploy it with the GitHub Pages, you can deploy your site from a private repository to a public repository using this option.
+
+Take your username/Organization as `openpress` for example: 
+
+* `openpress/homepage`: A private repository of `Easy Hugo Blog` template
+* `openpress/openpress.github.io`: A public repository using GitHub Pages
