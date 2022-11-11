@@ -24,7 +24,7 @@ It integrates several plugins/GitHub Actions to make things easy and simple.
 
 Use case:
 
-A GitHub Free Plan account cannot use the GitHub Pages in a private repository. To make your source contents private and deploy it with the GitHub Pages, you can deploy your site from a private repository to a public repository using this option.
+A GitHub Free Plan account cannot use the GitHub Pages in a private repository. To make your source contents private and deploy it with the GitHub Pages, you can deploy your site from a private repository to a public repository.
 
 Take your username/Organization as `openpress` for example: 
 
