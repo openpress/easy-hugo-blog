@@ -43,4 +43,6 @@ and set your public key to your public repository.
 
 Note: You can [use ssh-keygen Template](https://github.com/gitx-io/ssh-keygen-template) to create a `deploy key` in GitHub repo instead of commandline.
 
+Then just create posts and set the public repo's GitHub Pages' branch as `gh-pages`.
 
+Done!
