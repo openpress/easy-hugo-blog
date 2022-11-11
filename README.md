@@ -31,6 +31,8 @@ Take your username/Organization as `openpress` for example:
 * `openpress/homepage`: A private repository of `Easy Hugo Blog` template
 * `openpress/openpress.github.io`: A public repository using GitHub Pages
 
+Note: the two repos must belongs to one user/organization.
+
 And you need use `deploy_key`. Firstly set your private key to the private repository, and ensure that the Name is set as `ACTIONS_DEPLOY_KEY` 
 
 ![WX20221008-114114@2x](https://user-images.githubusercontent.com/1658618/201357562-cedbacc6-0cac-4245-bd03-0b617090c211.png)
