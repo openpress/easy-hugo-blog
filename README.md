@@ -4,7 +4,7 @@ Easy Hugo Blog（EHB）is a GitHub Template repo for creating a Hugo blog rapidl
 
 It integrates several plugins/GitHub Actions to make things easy and simple.
 
-* [gitfx shortcode plugin](https://gitx.io/post/hugo-with-gitfx-zh_cn/) helps to insert code snippets and its outputs in post automaticly
+* [gitfx shortcode plugin](https://gitfx.github.io/post/hugo-with-gitfx-zh_cn/) helps to insert code snippets and its outputs in post automaticly
 * [hugo-with-github-issues](https://github.com/skyfe79/hugo-with-github-issues) Action is used to create/edit new blog post in Issues and then added/updated to Hugo posts automaticly
 * [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) Action helps to deploy posts to `<Your username/Organization>.github.io` automaticly
 
@@ -41,7 +41,7 @@ and set your public key to your public repository.
 
 ![WX20221006-161458@2x](https://user-images.githubusercontent.com/1658618/201357645-e660f17a-c306-4806-92b0-05da6992f64e.png)
 
-Note: You can [use ssh-keygen Template](https://github.com/gitx-io/ssh-keygen-template) to create a `deploy key` in GitHub repo instead of commandline.
+Note: You can [use ssh-keygen Template](https://github.com/gitfx/ssh-keygen-template) to create a `deploy key` in GitHub repo instead of commandline.
 
 Then just create posts and set the public repo's GitHub Pages' branch as `gh-pages`.
 
