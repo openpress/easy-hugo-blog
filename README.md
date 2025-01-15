@@ -4,7 +4,7 @@ Easy Hugo Blog（EHB）is a GitHub Template repo for creating a Hugo blog rapidl
 
 It integrates several plugins/GitHub Actions to make things easy and simple.
 
-* [gitfx shortcode plugin](https://gitfx.github.io/post/hugo-with-gitfx-zh_cn/) helps to insert code snippets and its outputs in post automaticly
+* [gitfx shortcode plugin](https://gitfx.github.io/post/hugo-with-gitfx/) helps to insert code snippets and its outputs in post automaticly
 * [hugo-with-github-issues](https://github.com/skyfe79/hugo-with-github-issues) Action is used to create/edit new blog post in Issues and then added/updated to Hugo posts automaticly
 * [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) Action helps to deploy posts to `<Your username/Organization>.github.io` automaticly
 
